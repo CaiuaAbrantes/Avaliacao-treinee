@@ -1,114 +1,67 @@
-# Avaliacao-Treinee
+# Sistema Inteligente de Monitoramento e Detecção de Anomalias (SIMDA)
 
-# Sistema Inteligente de Monitoramento e Detecção de Anomalias com ESP32
-
----
+Este repositório contém o planejamento e a estruturação inicial do sistema de monitoramento baseado em ESP32 e FastAPI.
 
 ## Integrantes da Equipe
-
-- Caiua Abrantes  
-- Paulo Henrique  
-- Tácio Matias  
+- **Caiuá Abrantes**
+- **Paulo Henrique**
+- **Tácio Matias**
 
 ---
 
 ## Objetivo do Projeto
+Desenvolver uma solução escalável para monitoramento de variáveis ambientais (temperatura/umidade) utilizando microcontroladores ESP32. O sistema foca na coleta automatizada, persistência em banco de dados de séries temporais e detecção de anomalias.
 
-Este projeto tem como objetivo desenvolver um sistema inteligente de monitoramento utilizando dispositivos ESP32 para coleta de dados em tempo real, integração com backend em nuvem e análise automatizada para detecção de anomalias.
-
-A proposta visa criar uma solução escalável capaz de monitorar variáveis ambientais, operacionais ou estruturais, permitindo o envio contínuo de informações para um servidor remoto, onde os dados serão processados, armazenados e analisados por algoritmos capazes de identificar padrões anormais.
-
-### O sistema busca oferecer:
-
-- Coleta automatizada de dados por sensores conectados ao ESP32  
-- Envio de dados em formato JSON para servidor remoto  
-- Backend em Python com FastAPI  
-- Armazenamento seguro em banco de dados na nuvem  
-- Dashboard para visualização e acompanhamento  
-- Sistema de alertas para eventos críticos  
-- Estrutura preparada para expansão futura com Machine Learning  
+### O sistema oferece:
+- Coleta via sensores conectados ao ESP32.
+- Backend em **Python com FastAPI** para processamento de JSON.
+- Armazenamento em **InfluxDB** (otimizado para sensores).
+- Dashboard para visualização e alertas de eventos críticos.
+- Estrutura preparada para expansão com Machine Learning.
 
 ---
 
 ## Tecnologias Previstas
 
-### Hardware
-
-- ESP32  
-- Sensores diversos (temperatura, umidade, movimento, etc.)  
-- Rede Wi-Fi para transmissão de dados  
-
-### Software
-
-- Python  
-- FastAPI  
-- Git e GitHub  
-- Banco de Dados em Nuvem (AWS RDS, Firebase ou similar)  
-- API REST  
-- JSON  
-- HTML/CSS/JavaScript (Dashboard futuro)  
-- Trello, Notion ou GitHub Projects para organização  
-
-### Infraestrutura
-
-- AWS (Hospedagem e banco de dados)  
-- Versionamento Semântico (SemVer)  
-- Git Flow / GitHub Flow  
+### Hardware e Software
+- **Hardware:** ESP32, Sensores (Temperatura/Umidade), Wi-Fi[cite: 1].
+- **Backend:** Python, FastAPI, InfluxDB[cite: 1].
+- **DevOps:** Git, GitHub, Versionamento Semântico (SemVer)[cite: 1].
+- **Gestão:** Kanban Físico e Gráfico de Gantt[cite: 1].
 
 ---
 
-## Estado Atual do Projeto
-
-### Fase Atual: Planejamento e Estruturação Inicial (Versão 0.1.0)
-
-Atualmente, o projeto encontra-se em fase de organização estrutural, contemplando:
-
-- Definição da proposta principal  
-- Criação e configuração do repositório remoto  
-- Planejamento inicial do produto  
-- Estruturação da documentação  
-- Organização do fluxo de trabalho da equipe  
-- Definição de backlog e roadmap  
-- Preparação para desenvolvimento dos módulos físicos e backend  
-
-### Próximas Etapas
-
-- Desenvolvimento do firmware ESP32  
-- Implementação da API backend  
-- Configuração do banco de dados  
-- Desenvolvimento do dashboard de monitoramento  
-- Testes integrados  
-- Publicação da versão 1.0  
+## Estado Atual: v0.1.0 - Planejamento Inicial
+O projeto encontra-se na fase de estruturação de documentação e definição de workflow[cite: 1].
+- **Versão Atual:** `v0.1.0` (Planejamento e Requisitos)[cite: 1].
+- **Próximo Marco:** `v0.5.0` (Backend funcional e conexão com Banco de Dados).
 
 ---
 
-## Documentação do Projeto
+## Documentação Completa
+Acesse os detalhes do projeto através dos links abaixo (conforme estrutura exigida):
 
-### Planejamento
+### 1. Planejamento
+- [Visão do Projeto](docs/planning/project-vision.md)
+- [Backlog Inicial](docs/planning/backlog.md)
+- [Roadmap](docs/planning/roadmap.md)
 
-- Visão do Projeto  
-- Backlog Inicial  
-- Roadmap  
+### 2. Fluxo de Trabalho
+- [Desenvolvimento vs Produção](docs/workflow/development-vs-production.md)
+- [Organização da Equipe](docs/workflow/team-organization.md)
+- [Quadro Kanban (Evidência Real)](docs/workflow/kanban.md)[cite: 1]
+- [Cronograma de Gantt](docs/workflow/gantt.md)[cite: 1]
 
-### Fluxo de Trabalho
-
-- Desenvolvimento vs Produção  
-- Organização da Equipe  
-- Kanban  
-- Gantt  
-
-### Evidências
-
-- Controle de Versão e GitHub  
+### 3. Evidências
+- [Histórico de Versionamento e Colaboração](docs/evidences/version-control/evidence-list.md)[cite: 1]
 
 ---
 
 ## Estrutura do Repositório
-
 ```txt
 README.md
 docs/
- ├── planning/
- ├── workflow/
- └── evidences/
-src/
+ ├── planning/   # Documentos de visão e metas
+ ├── workflow/   # Processos e métodos (Kanban/Gantt)
+ └── evidences/  # Prints e fotos comprobatórias
+src/             # Código-fonte (em desenvolvimento)
