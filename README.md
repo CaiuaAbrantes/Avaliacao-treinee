@@ -24,16 +24,16 @@ Desenvolver uma solução escalável para monitoramento de variáveis ambientais
 ## Tecnologias Previstas
 
 ### Hardware e Software
-- **Hardware:** ESP32, Sensores (Temperatura/Umidade), Wi-Fi[cite: 1].
-- **Backend:** Python, FastAPI, InfluxDB[cite: 1].
-- **DevOps:** Git, GitHub, Versionamento Semântico (SemVer)[cite: 1].
-- **Gestão:** Kanban Físico e Gráfico de Gantt[cite: 1].
+- **Hardware:** ESP32, Sensores (Temperatura/Umidade), Wi-Fi
+- **Backend:** Python, FastAPI, InfluxDB
+- **DevOps:** Git, GitHub, Versionamento Semântico (SemVer)
+- **Gestão:** Kanban Físico e Gráfico de Gantt
 
 ---
 
 ## Estado Atual: v0.1.0 - Planejamento Inicial
-O projeto encontra-se na fase de estruturação de documentação e definição de workflow[cite: 1].
-- **Versão Atual:** `v0.1.0` (Planejamento e Requisitos)[cite: 1].
+O projeto encontra-se na fase de estruturação de documentação e definição de workflow
+- **Versão Atual:** `v0.1.0` (Planejamento e Requisitos).
 - **Próximo Marco:** `v0.5.0` (Backend funcional e conexão com Banco de Dados).
 
 ---
@@ -49,8 +49,8 @@ Acesse os detalhes do projeto através dos links abaixo (conforme estrutura exig
 ### 2. Fluxo de Trabalho
 - [Desenvolvimento vs Produção](docs/workflow/development-vs-production.md)
 - [Organização da Equipe](docs/workflow/team-organization.md)
-- [Quadro Kanban (Evidência Real)](docs/workflow/kanban.md)[cite: 1]
-- [Cronograma de Gantt](docs/workflow/gantt.md)[cite: 1]
+- [Quadro Kanban (Evidência Real)](docs/workflow/kanban.md)
+- [Cronograma de Gantt](docs/workflow/gantt.md)
 
 ### 3. Evidências
 - [Histórico de Versionamento e Colaboração](docs/evidences/version-control/evidence-list.md)[cite: 1]
