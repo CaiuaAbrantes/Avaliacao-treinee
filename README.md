@@ -53,8 +53,7 @@ Acesse os detalhes do projeto através dos links abaixo (conforme estrutura exig
 - [Cronograma de Gantt](docs/workflow/gantt.md)
 
 ### 3. Evidências
-- [Histórico de Versionamento e Colaboração](docs/evidences/version-control/evidence-list.md)[cite: 1]
-
+- [Histórico de Versionamento e Colaboração](docs/evidences/version-control/evidence-list.md)
 ---
 
 ## Estrutura do Repositório
