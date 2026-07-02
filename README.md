@@ -1,118 +1,164 @@
 # Sistema Inteligente de Monitoramento e Detecção de Anomalias (SIMDA)
 
-Este repositório contém o planejamento e a estruturação inicial do sistema de monitoramento baseado em ESP32 e FastAPI.
-
-## Integrantes da Equipe
-- **Caiuá Abrantes**
-- **Paulo Henrique**
-- **Tácio Matias**
+Este repositório contém o planejamento, desenvolvimento e documentação do *Sistema Inteligente de Monitoramento e Detecção de Anomalias (SIMDA)*, uma solução baseada em Internet das Coisas (IoT) para coleta, armazenamento e análise inteligente de dados provenientes de sensores.
 
 ---
 
-## Objetivo do Projeto
-Desenvolver uma solução escalável para monitoramento de variáveis ambientais (temperatura/umidade) utilizando microcontroladores ESP32. O sistema foca na coleta automatizada, persistência em banco de dados de séries temporais e detecção de anomalias.
+# Integrantes da Equipe
 
-### O sistema oferece:
-- Coleta via sensores conectados ao ESP32.
-- Backend em **Python com FastAPI** para processamento de JSON.
-- Armazenamento em **InfluxDB** (otimizado para sensores).
-- Dashboard para visualização e alertas de eventos críticos.
-- Estrutura preparada para expansão com Machine Learning.
+- *Caiuá Abrantes Lopes*
+- *Paulo Henrique*
+- *Tácio Matias*
 
 ---
 
-## Tecnologias Previstas
+# Objetivo do Projeto
 
-### Hardware e Software
-- **Hardware:** ESP32, Sensores (Temperatura/Umidade), Wi-Fi
-- **Backend:** Python, FastAPI, InfluxDB
-- **DevOps:** Git, GitHub, Versionamento Semântico (SemVer)
-- **Gestão:** Kanban Físico e Gráfico de Gantt
+Desenvolver um sistema inteligente de monitoramento capaz de coletar dados utilizando dispositivos ESP32, transmitir essas informações para uma infraestrutura em nuvem, armazená-las em um banco de dados especializado em séries temporais e identificar automaticamente comportamentos anômalos por meio de técnicas estatísticas.
 
----
+## O sistema oferece
 
-## Estado Atual: v0.1.0 - Planejamento Inicial
-O projeto encontra-se na fase de estruturação de documentação e definição de workflow
-- **Versão Atual:** `v0.1.0` (Planejamento e Requisitos).
-- **Próximo Marco:** `v0.5.0` (Backend funcional e conexão com Banco de Dados).
+- Coleta automática de dados utilizando ESP32;
+- Comunicação entre dispositivos e servidor por meio de API desenvolvida em FastAPI;
+- Armazenamento das medições utilizando InfluxDB;
+- Detecção automática de anomalias utilizando o algoritmo Modified Z-Score;
+- Interface para visualização das informações processadas;
+- Arquitetura preparada para expansão futura.
 
 ---
 
-## Documentação Completa
-Acesse os detalhes do projeto através dos links abaixo (conforme estrutura exigida):
+# Tecnologias Utilizadas
 
-### 1. Planejamento
-- [Visão do Projeto](docs/planning/project-vision.md)
-- [Backlog Inicial](docs/planning/backlog.md)
-- [Roadmap](docs/planning/roadmap.md)
+## Hardware
 
-### 2. Fluxo de Trabalho
-- [Desenvolvimento vs Produção](docs/workflow/development-vs-production.md)
-- [Organização da Equipe](docs/workflow/team-organization.md)
-- [Quadro Kanban (Evidência Real)](docs/workflow/kanban.md)
-- [Cronograma de Gantt](docs/workflow/gantt.md)
+- ESP32
+- Sensores de temperatura e umidade
+- Comunicação Wi-Fi
 
-### 3. Evidências
-- [Histórico de Versionamento e Colaboração](docs/evidences/version-control/evidence-list.md)
+## Software
+
+- Python
+- FastAPI
+- InfluxDB
+- AWS
+- Git
+- GitHub
+
+## Gerenciamento
+
+- Git
+- GitHub
+- Kanban
+- Gráfico de Gantt
+- Semantic Versioning (SemVer)
+
 ---
 
-## Estrutura do Repositório
-```txt
-README.md
-docs/
- ├── planning/   # Documentos de visão e metas
- ├── workflow/   # Processos e métodos (Kanban/Gantt)
- └── evidences/  # Prints e fotos comprobatórias
-src/             # Código-fonte (em desenvolvimento)
+# Estado Atual do Projeto
 
-# 📚 Documentação
+*Versão Atual:* v0.1.0
 
-A documentação do projeto está organizada na pasta `docs`, contendo os documentos de planejamento, arquitetura, fluxo de desenvolvimento e gerenciamento do projeto.
+Fase atual:
+
+- Planejamento da arquitetura;
+- Organização da documentação;
+- Definição do fluxo de desenvolvimento;
+- Estruturação dos componentes do sistema.
+
+Próximo marco previsto:
+
+*v0.5.0*
+
+- Backend funcional;
+- Banco de dados integrado;
+- Comunicação entre os módulos.
+
+---
+
+# Documentação
+
+Toda a documentação do projeto encontra-se organizada na pasta docs, permitindo acompanhar o planejamento, desenvolvimento e evolução da solução.
 
 ## Planejamento
 
 | Documento | Descrição |
 |-----------|-----------|
-| [Plano de Execução](docs/planning/plan-of-execution.md) | Planejamento geral do desenvolvimento do projeto, cronograma, organização da equipe, Sprints e entregas. |
-| [Problem Analysis](docs/planning/problem-analysis.md) | Análise do problema, justificativa da solução e evidências da necessidade do sistema. |
-| [Feature Impact](docs/planning/feature-impact.md) | Relação entre os problemas identificados, as funcionalidades implementadas e seus benefícios. |
+| [Plano de Execução](docs/planning/plan-of-execution.md) | Planejamento completo do desenvolvimento do projeto. |
+| [Visão do Projeto](docs/planning/project-vision.md) | Objetivos, escopo e visão geral da solução. |
+| [Problem Analysis](docs/planning/problem-analysis.md) | Identificação do problema e justificativa da solução proposta. |
+| [Feature Impact](docs/planning/feature-impact.md) | Relação entre os problemas identificados e as funcionalidades implementadas. |
 | [Backlog](docs/planning/backlog.md) | Lista priorizada das funcionalidades do projeto. |
-| [Roadmap](docs/planning/roadmap.md) | Planejamento evolutivo das funcionalidades previstas. |
-| [Gantt Chart](docs/planning/gantt-chart.md) | Cronograma das atividades desenvolvidas durante o projeto. |
+| [Roadmap](docs/planning/roadmap.md) | Evolução planejada das funcionalidades. |
 
 ---
 
-## Fluxo de Desenvolvimento
+## Workflow
 
 | Documento | Descrição |
 |-----------|-----------|
 | [Sprint Model](docs/workflow/sprint-model.md) | Organização das Sprints utilizadas durante o desenvolvimento. |
-| [Team Responsibilities](docs/workflow/team-responsibilities.md) | Responsabilidades atribuídas a cada integrante da equipe. |
+| [Team Responsibilities](docs/workflow/team-responsibilities.md) | Responsabilidades de cada integrante da equipe. |
 | [Semantic Versioning](docs/workflow/semantic-versioning.md) | Estratégia de versionamento adotada para acompanhar a evolução do projeto. |
+| [Kanban](docs/workflow/kanban.md) | Organização e acompanhamento das tarefas. |
+| [Gantt](docs/workflow/gantt.md) | Cronograma das atividades do projeto. |
 
 ---
 
-## Arquitetura
+## Evidências
 
-| Documento | Descrição |
-|-----------|-----------|
-| [Architecture Overview](docs/architecture/architecture-overview.md) | Descrição da arquitetura do sistema e integração entre seus componentes. |
+As evidências do desenvolvimento encontram-se na pasta docs/evidences, incluindo:
 
----
-
-## Fundamentação
-
-A fundamentação teórica utilizada no desenvolvimento encontra-se disponível na documentação complementar entregue juntamente com o projeto, abordando:
-
-- Internet das Coisas (IoT);
-- ESP32;
-- FastAPI;
-- InfluxDB;
-- AWS;
-- Modified Z-Score.
+- histórico de versionamento;
+- registros da evolução do projeto;
+- capturas de tela;
+- demais evidências utilizadas na documentação.
 
 ---
 
-## Controle de Versões
+## Estrutura do Repositório
 
-O projeto utiliza **Git** para controle de versões e **Semantic Versioning (SemVer)** para identificação das releases durante o desenvolvimento.
+text
+README.md
+
+docs/
+│
+├── planning/
+│   ├── plan-of-execution.md
+│   ├── project-vision.md
+│   ├── problem-analysis.md
+│   ├── feature-impact.md
+│   ├── backlog.md
+│   └── roadmap.md
+│
+├── workflow/
+│   ├── sprint-model.md
+│   ├── semantic-versioning.md
+│   ├── team-responsibilities.md
+│   ├── kanban.md
+│   └── gantt.md
+│
+├── evidences/
+│   └── version-control/
+│
+└── architecture/
+    └── (documentação da arquitetura)
+
+src/
+│
+├── api/
+├── worker/
+├── esp32/
+└── frontend/
+
+
+---
+
+# Controle de Versões
+
+O projeto utiliza *Git* para controle das alterações e *Semantic Versioning (SemVer)* para identificação da evolução das versões durante o desenvolvimento.
+
+---
+
+# Licença
+
+Este projeto foi desenvolvido para fins acadêmicos como atividade da disciplina de Engenharia de Software, podendo ser utilizado exclusivamente para estudos e demonstrações.
