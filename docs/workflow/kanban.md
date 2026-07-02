@@ -1,19 +1,82 @@
-# Fluxo de Trabalho: Kanban
+ # Kanban
 
-## Por que utilizamos o Kanban?
-Para este projeto de monitoramento térmico com ESP32, escolhemos o método Kanban para garantir a visualização clara do fluxo de dados e do desenvolvimento do software. Como trabalhamos com integração entre hardware e backend (FastAPI), o Kanban nos permite:
-- Limitar o trabalho em progresso (WIP) para evitar gargalos na integração do firmware com a API.
-- Identificar rapidamente se a etapa de validação de dados no InfluxDB está atrasando o roadmap.
-- Proporcionar transparência para a equipe sobre o estado de cada sensor e endpoint desenvolvido.
+## Objetivo
 
-## Evidência Real (Quadro Físico)
-Conforme exigido pelas diretrizes da avaliação, mantivemos um quadro físico para a gestão das nossas sprints iniciais. Este quadro reflete as tarefas reais de configuração de hardware e ambiente de banco de dados.
+O quadro Kanban foi utilizado para organizar e acompanhar o andamento das atividades do projeto durante seu desenvolvimento.
 
-![Evidência do Kanban Físico](../../docs/evidences/kanban-foto.jpg)
+---
 
-## Detalhamento das Tarefas Reais
-As tarefas listadas no quadro físico incluem:
-- **Backlog:** Implementar Deep Sleep no ESP32; Criar dashboard histórico.
-- **A Fazer:** Configurar biblioteca HTTPClient no ESP32; Dockerizar backend FastAPI.
-- **Em andamento:** Desenvolver endpoint POST /sensor-data; Validar recepção de JSON.
-- **Concluído:** Definição da pinagem do sensor; Configuração inicial do InfluxDB.
+# Backlog
+
+- Levantamento bibliográfico
+- Definição da arquitetura
+- Desenvolvimento do firmware ESP32
+- Desenvolvimento da API FastAPI
+- Configuração da infraestrutura AWS
+- Configuração do InfluxDB
+- Implementação do Worker
+- Implementação do Modified Z-Score
+- Desenvolvimento do Front-end
+- Testes de integração
+- Documentação
+- Apresentação final
+
+---
+
+# To Do
+
+- Finalizar comunicação ESP32 → API
+- Implementar consultas no Front-end
+- Melhorar documentação técnica
+- Preparar apresentação
+
+---
+
+# Doing
+
+- Desenvolvimento do Worker
+- Integração FastAPI com InfluxDB
+- Testes do algoritmo Modified Z-Score
+
+---
+
+# Review
+
+- Revisão da documentação
+- Revisão do código
+- Validação da arquitetura
+
+---
+
+# Done
+
+- Definição do escopo
+- Levantamento bibliográfico
+- Organização do GitHub
+- Estruturação do projeto
+- Planejamento das Sprints
+- Definição das responsabilidades
+- Implementação inicial da API
+- Configuração inicial do banco InfluxDB
+
+---
+
+## Fluxo de Trabalho
+
+As atividades percorrem o seguinte fluxo:
+
+Backlog
+↓
+
+To Do
+↓
+
+Doing
+↓
+
+Review
+↓
+
+Done
+
+Cada tarefa somente avança para a próxima etapa após validação do integrante responsável e revisão da equipe.
