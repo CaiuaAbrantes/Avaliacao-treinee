@@ -1,23 +1,32 @@
-# Cronograma de Desenvolvimento (Gantt)
+# Gantt Chart
 
-## Metodologia de Prazos
-Para garantir a entrega da versão 1.0 até o final do terceiro bimestre, estruturamos nosso cronograma focando primeiro na estabilidade da comunicação entre o hardware (ESP32) e a persistência de dados (InfluxDB).
+## Objetivo
 
-## Gráfico de Gantt (Visual)
-![Gráfico de Gantt do Projeto](../../docs/evidences/gantt-digital.png)
+Este cronograma apresenta a organização das principais atividades do desenvolvimento do Sistema Inteligente de Monitoramento e Detecção de Anomalias (SIMDA), distribuídas ao longo das Sprints do projeto.
 
-## Marcos e Versionamento Semântico
-Seguindo as diretrizes de maturidade do projeto, estabelecemos os seguintes marcos:
+---
 
-| Versão | Descrição | Prazo Estimado |
-| :--- | :--- | :--- |
-| **v0.1.0** | Planejamento, requisitos e estrutura de pastas (atual). | Maio/2026 |
-| **v0.5.0** | Backend FastAPI funcional com conexão ao InfluxDB. | Junho/2026 |
-| **v0.9.0** | Integração total: ESP32 enviando dados em tempo real. | Agosto/2026 |
-| **v1.0.0** | Sistema em produção, testado e documentado. | Setembro/2026 |
+## Cronograma
 
-## Detalhamento das Etapas
-1. **Setup Inicial:** Configuração do ambiente Docker e repositório.
-2. **Firmware Base:** Desenvolvimento da lógica de leitura dos sensores no ESP32.
-3. **API Core:** Construção dos endpoints de recepção de dados.
-4. **Homologação:** Testes de estresse e validação da integridade dos dados.
+| Atividade | Responsável | Sprint 1 | Sprint 2 | Sprint 3 | Sprint 4 | Sprint 5 | Sprint 6 |
+|-----------|-------------|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
+| Levantamento bibliográfico | Todos | █████ | | | | | |
+| Definição da arquitetura | Todos | █████ | ███ | | | | |
+| Estruturação do GitHub | Caiuá | █████ | | | | | |
+| Documentação inicial | Todos | █████ | ███ | | | | |
+| Desenvolvimento do ESP32 | Paulo | | █████ | █████ | | | |
+| Desenvolvimento da API FastAPI | Tácio | | █████ | █████ | ███ | | |
+| Configuração do InfluxDB | Tácio | | ███ | █████ | | | |
+| Desenvolvimento do Worker | Caiuá | | | █████ | █████ | | |
+| Implementação do Modified Z-Score | Caiuá | | | █████ | █████ | | |
+| Desenvolvimento do Front-end | Todos | | | | █████ | █████ | |
+| Integração entre módulos | Todos | | | | █████ | █████ | |
+| Testes de funcionamento | Todos | | | | | █████ | █████ |
+| Correções finais | Todos | | | | | | █████ |
+| Preparação da apresentação | Todos | | | | | | █████ |
+
+---
+
+## Legenda
+
+█ = atividade em desenvolvimento
