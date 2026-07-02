@@ -64,3 +64,55 @@ docs/
  ├── workflow/   # Processos e métodos (Kanban/Gantt)
  └── evidences/  # Prints e fotos comprobatórias
 src/             # Código-fonte (em desenvolvimento)
+
+# 📚 Documentação
+
+A documentação do projeto está organizada na pasta `docs`, contendo os documentos de planejamento, arquitetura, fluxo de desenvolvimento e gerenciamento do projeto.
+
+## Planejamento
+
+| Documento | Descrição |
+|-----------|-----------|
+| [Plano de Execução](docs/planning/plan-of-execution.md) | Planejamento geral do desenvolvimento do projeto, cronograma, organização da equipe, Sprints e entregas. |
+| [Problem Analysis](docs/planning/problem-analysis.md) | Análise do problema, justificativa da solução e evidências da necessidade do sistema. |
+| [Feature Impact](docs/planning/feature-impact.md) | Relação entre os problemas identificados, as funcionalidades implementadas e seus benefícios. |
+| [Backlog](docs/planning/backlog.md) | Lista priorizada das funcionalidades do projeto. |
+| [Roadmap](docs/planning/roadmap.md) | Planejamento evolutivo das funcionalidades previstas. |
+| [Gantt Chart](docs/planning/gantt-chart.md) | Cronograma das atividades desenvolvidas durante o projeto. |
+
+---
+
+## Fluxo de Desenvolvimento
+
+| Documento | Descrição |
+|-----------|-----------|
+| [Sprint Model](docs/workflow/sprint-model.md) | Organização das Sprints utilizadas durante o desenvolvimento. |
+| [Team Responsibilities](docs/workflow/team-responsibilities.md) | Responsabilidades atribuídas a cada integrante da equipe. |
+| [Semantic Versioning](docs/workflow/semantic-versioning.md) | Estratégia de versionamento adotada para acompanhar a evolução do projeto. |
+
+---
+
+## Arquitetura
+
+| Documento | Descrição |
+|-----------|-----------|
+| [Architecture Overview](docs/architecture/architecture-overview.md) | Descrição da arquitetura do sistema e integração entre seus componentes. |
+
+---
+
+## Fundamentação
+
+A fundamentação teórica utilizada no desenvolvimento encontra-se disponível na documentação complementar entregue juntamente com o projeto, abordando:
+
+- Internet das Coisas (IoT);
+- ESP32;
+- FastAPI;
+- InfluxDB;
+- AWS;
+- Modified Z-Score.
+
+---
+
+## Controle de Versões
+
+O projeto utiliza **Git** para controle de versões e **Semantic Versioning (SemVer)** para identificação das releases durante o desenvolvimento.
