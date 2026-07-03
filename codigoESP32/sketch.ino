@@ -1,90 +1,102 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
+#include <WiFiClientSecure.h> // ADICIONADO: Necessário para a segurança HTTPS da AWS
 #include <DHT.h>
 
-// CONFIG SENSOR
-#define PINO_SENSOR 27
-#define TIPO_SENSOR DHT22
+// ===== SENSOR =====
+#define DHTPIN 27
+#define DHTTYPE DHT22
 
-// CONFIG WIFI
-const char* WIFI_SSID = "EloisaCasa_2G";
-const char* WIFI_SENHA = "Paulo1011@";
+DHT dht(DHTPIN, DHTTYPE);
 
-// CONFIG API
-const char* URL_API = "http://IP_DO_SEU_COLEGA/dados";
-const char* TOKEN_API = "SEU_TOKEN";
+// ===== WIFI =====
+const char* ssid = "Academicos";
+const char* password = "";
 
-// INSTÂNCIA DO SENSOR
-DHT sensor(PINO_SENSOR, TIPO_SENSOR);
-
-void conectarWiFi() {
-  Serial.println("Conectando ao Wi-Fi...");
-
-  WiFi.begin(WIFI_SSID, WIFI_SENHA);
-
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-
-  Serial.println("\nWi-Fi conectado com sucesso!");
-  Serial.print("IP do ESP32: ");
-  Serial.println(WiFi.localIP());
-}
-
-String montarJSON(float temp, float umid) {
-  String payload = "{";
-  payload += "\"device_id\": \"esp32_01\",";
-  payload += "\"temperatura\": " + String(temp) + ",";
-  payload += "\"umidade\": " + String(umid);
-  payload += "}";
-
-  return payload;
-}
-
-void enviarDados(String json) {
-  HTTPClient clienteHTTP;
-
-  clienteHTTP.begin(URL_API);
-  clienteHTTP.addHeader("Content-Type", "application/json");
-  clienteHTTP.addHeader("Authorization", "Bearer " + String(TOKEN_API));
-
-  int codigoResposta = clienteHTTP.POST(json);
-
-  Serial.print("Resposta HTTP: ");
-  Serial.println(codigoResposta);
-
-  clienteHTTP.end();
-}
+// ===== AWS =====
+// CORRIGIDO: Agora aponta para a URL completa com a rota exata exigida pelo FastAPI
+const char* aws_url = "https://e6iwuc2lavoisqhknoaaml43ne0ebbdi.lambda-url.sa-east-1.on.aws/default/validador-sensores-tcc";
 
 void setup() {
   Serial.begin(9600);
-  sensor.begin();
+  dht.begin();
 
-  conectarWiFi();
+  Serial.println();
+  Serial.println("Iniciando ESP32...");
+
+  WiFi.begin(ssid, password);
+
+  Serial.print("Conectando em ");
+  Serial.println(ssid);
+
+  int tentativas = 0;
+
+  while (WiFi.status() != WL_CONNECTED && tentativas < 30) {
+    delay(500);
+    Serial.print(".");
+    tentativas++;
+  }
+
+  Serial.println();
+
+  if (WiFi.status() == WL_CONNECTED) {
+    Serial.println("Wi-Fi conectado!");
+    Serial.print("IP: ");
+    Serial.println(WiFi.localIP());
+  } else {
+    Serial.println("Falha ao conectar no Wi-Fi!");
+    Serial.println("Verifique nome da rede e senha.");
+  }
 }
 
 void loop() {
-  float temperatura = sensor.readTemperature();
-  float umidade = sensor.readHumidity();
 
-  if (isnan(temperatura) || isnan(umidade)) {
-    Serial.println("Erro ao ler o sensor!");
+  if (WiFi.status() != WL_CONNECTED) {
+    Serial.println("Wi-Fi desconectado.");
+    delay(5000);
     return;
   }
 
-  String json = montarJSON(temperatura, umidade);
+  float temperatura = dht.readTemperature();
+  float umidade = dht.readHumidity();
 
-  enviarDados(json);
+  if (isnan(temperatura) || isnan(umidade)) {
+    Serial.println("Erro ao ler DHT22");
+    delay(3000);
+    return;
+  }
 
-  Serial.println("JSON enviado:");
+  String json = "{";
+  json += "\"device_id\":\"esp32_01\",";
+  json += "\"temperatura\":" + String(temperatura, 2) + ",";
+  json += "\"umidade\":" + String(umidade, 2);
+  json += "}";
+
+  Serial.println("Enviando:");
   Serial.println(json);
 
-  Serial.print("Temp: ");
-  Serial.print(temperatura);
-  Serial.print(" °C | Umidade: ");
-  Serial.print(umidade);
-  Serial.println(" %");
+  // ADICIONADO: Criação do cliente seguro para burlar a trava de SSL da AWS
+  WiFiClientSecure client;
+  client.setInsecure(); // Diz ao ESP32 para confiar na URL da AWS sem precisar instalar arquivos de certificado (.pem)
 
-  delay(4000);
+  HTTPClient http;
+
+  // CORRIGIDO: Passando o cliente seguro junto com a URL de destino
+  http.begin(client, aws_url);
+  http.addHeader("Content-Type", "application/json");
+
+  int resposta = http.POST(json);
+
+  Serial.print("HTTP Code: ");
+  Serial.println(resposta); // Se der 200, deu certo! Se der menor que 0, é erro de rede/Wi-Fi.
+
+  if (resposta > 0) {
+    Serial.println("Dados enviados!");
+  } else {
+    Serial.println("Falha no envio.");
+  }
+
+  http.end();
+
+  delay(2000);
 }
