@@ -31,7 +31,7 @@ Além disso, a ausência de um sistema centralizado dificulta:
 
 ## Coleta de Dados
 
-A Figura 2 apresenta as leituras armazenadas no InfluxDB antes da execução do algoritmo de detecção de anomalias.
+A Figura 1 apresenta as leituras armazenadas no InfluxDB antes da execução do algoritmo de detecção de anomalias.
 
 Observa-se que todas as medições são armazenadas normalmente, independentemente de representarem um comportamento esperado ou não.
 
