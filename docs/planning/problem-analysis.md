@@ -28,10 +28,36 @@ Além disso, a ausência de um sistema centralizado dificulta:
 
 # 3. Evidências do problema
 
-<img width="772" height="237" alt="image" src="https://github.com/user-attachments/assets/04b315c3-2594-43bd-bb1d-545182be1daf" />
+
+## Coleta de Dados
+
+A Figura 2 apresenta as leituras armazenadas no InfluxDB antes da execução do algoritmo de detecção de anomalias.
+
+Observa-se que todas as medições são armazenadas normalmente, independentemente de representarem um comportamento esperado ou não.
+
 <img width="809" height="532" alt="image" src="https://github.com/user-attachments/assets/a14731a6-d0f8-4334-9b8b-de09be525cf6" />
+
+---
+
+## Presença de Leituras Atípicas
+
+Durante os testes foram inseridas propositalmente leituras de 40 °C entre valores próximos de 25 °C.
+
+Essas leituras representam anomalias que, sem um mecanismo automático, dependeriam da análise visual do operador.
+
 <img width="802" height="263" alt="image" src="https://github.com/user-attachments/assets/bd1f7ffb-fade-43b2-8e06-5ac9065724cd" />
 
+---
+
+## Visualização Temporal
+
+O gráfico da Figura 3 demonstra o comportamento das temperaturas ao longo do tempo.
+
+É possível observar que os valores de 40 °C aparecem como picos isolados em relação ao comportamento normal das medições.
+
+Esses eventos justificam a necessidade da utilização de um algoritmo automático de detecção de anomalias.
+
+<img width="772" height="237" alt="image" src="https://github.com/user-attachments/assets/04b315c3-2594-43bd-bb1d-545182be1daf" />
 
 ---
 
