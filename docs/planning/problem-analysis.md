@@ -28,6 +28,10 @@ Além disso, a ausência de um sistema centralizado dificulta:
 
 # 3. Evidências do problema
 
+<img width="772" height="237" alt="image" src="https://github.com/user-attachments/assets/04b315c3-2594-43bd-bb1d-545182be1daf" />
+<img width="809" height="532" alt="image" src="https://github.com/user-attachments/assets/a14731a6-d0f8-4334-9b8b-de09be525cf6" />
+<img width="802" height="263" alt="image" src="https://github.com/user-attachments/assets/bd1f7ffb-fade-43b2-8e06-5ac9065724cd" />
+
 
 ---
 
